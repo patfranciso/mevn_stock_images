@@ -5,12 +5,11 @@ export default class API{
   // get all posts
   static async getAllPosts(){
     const res = await axios.get(url);
-    console.log(res.data)
     return res.data;
   }
 
   // get a post by id
-	static async getPostbyId(){
+	static async getPostById(id){
 		const res = await axios.get(`${url}/${id}`);
 		return res.data;
 	}
@@ -20,12 +19,12 @@ export default class API{
 		return res.data;
 	}
 	// update post in database
-	static async updatePost(){
+	static async updatePost(id){
 		const res = await axios.patch(`${url}/${id}`, post);
 		return res.data;
 	}
 	// delete post in database
-	static async deletePost(){
+	static async deletePost(id){
 		const res = await axios.delete(`${url}/${id}`);
 		return res.data;
 	}

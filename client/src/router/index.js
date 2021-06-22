@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Post from '../views/Post.vue'
 import About from '../views/About.vue'
 import AddPost from '../views/AddPost.vue'
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/add-post',
     name: 'add-post',
     component: AddPost
+  },
+  {
+    path: '/post/:id',
+    name: 'post',
+    component: Post,
   }
 ]
 
