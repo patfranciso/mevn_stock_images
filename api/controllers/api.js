@@ -1,7 +1,15 @@
+const Post = require('../models/posts');
+
+
 module.exports = class API {
   // fetch all posts
   static async fetchAllPost(req, res) {
-    res.send('Hello from API');
+    try{
+			const posts = await Post.find();
+			res.status(200).json(posts);
+		}catch(err){
+			res.status(404).json({message: err.message});
+		}
   }
 
   // fetch post by id
