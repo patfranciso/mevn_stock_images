@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());  // response format
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("uploads"));
+app.use('/images', express.static(__dirname + '/uploads'));
 
 // database connection
 mongoose.connect(process.env.DB_URI, {
