@@ -1,12 +1,12 @@
 <template>
   <v-container>
-    <v-alert border="left" close-text="Close" color="green accent-4" dark dismissable v-if="this.$route.params.message">
+    <v-alert border="left" close-text="Close Alert" color="green accent-4" dark dismissable v-if="this.$route.params.message">
       {{ this.$route.params.message }}
     </v-alert>
     <v-row no-gutters>
       <v-col sm="4" class="pa-3" v-for="post in posts" :key="post.id">
         <v-card class="pa-1" :to="{ name: 'post', params: {id: post._id} }">
-          <v-img height="250" :src="'http://localhost:5000/images/'+post.image"></v-img>
+          <v-img height="250" :src="`/${post.image}`"></v-img>
           <v-btn class="ml-4 mt-3" small outlined color="indigo">
             {{ post.category }}
           </v-btn>
