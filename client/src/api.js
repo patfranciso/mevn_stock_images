@@ -14,12 +14,12 @@ export default class API{
 		return res.data;
 	}
 	// insert post into database
-	static async addPost(){
+	static async addPost(post){
 		const res = await axios.post(url, post);
 		return res.data;
 	}
 	// update post in database
-	static async updatePost(id){
+	static async updatePost(id, post){
 		const res = await axios.patch(`${url}/${id}`, post);
 		return res.data;
 	}
